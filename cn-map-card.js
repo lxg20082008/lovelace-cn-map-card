@@ -1,7 +1,7 @@
 console.info("%c  GAODE MAP CARD  \n%c Version 1.2.7 ",
 "color: orange; font-weight: bold; background: black", 
 "color: white; font-weight: bold; background: dimgray");
-window._AMapSecurityConfig = { securityJsCode:'b4f5346fb4a9979158ac23b49d1a0803' };
+window._AMapSecurityConfig = { securityJsCode:'xxxx' }; //源代码新增。xxxx替换为您申请的安全密钥。
 import 'https://webapi.amap.com/loader.js';
 import './w3color.js';
 
@@ -78,7 +78,7 @@ class GaodeMapCard extends HTMLElement {
   connectedCallback(){
     // console.log(this.config);
     this._loadMap({
-      key: this.config.key||"4a9cf55d794f86c8330ee0b69fd31796",   // 申请好的Web端开发者Key，首次调用 load 时必填 f87e0c9c4f3e1e78f963075d142979f0
+      key: this.config.key||"xxxx",   // xxxx替换为申请好的Web端开发者Key，首次调用 load 时必填 f87e0c9c4f3e1e78f963075d142979f0
       version: "2.0",   // 指定要加载的 JSAPI 的版本，缺省时默认为 1.4.15
       plugins: ['AMap.MoveAnimation'] //插件列表
     });
