@@ -1,7 +1,7 @@
 console.info("%c  GAODE MAP CARD  \n%c Version 1.2.7 ",
 "color: orange; font-weight: bold; background: black", 
 "color: white; font-weight: bold; background: dimgray");
-
+window._AMapSecurityConfig = { securityJsCode:'b4f5346fb4a9979158ac23b49d1a0803' };
 import 'https://webapi.amap.com/loader.js';
 import './w3color.js';
 
@@ -78,7 +78,7 @@ class GaodeMapCard extends HTMLElement {
   connectedCallback(){
     // console.log(this.config);
     this._loadMap({
-      key: this.config.key||"ce3b1a3a7e67fc75810ce1ba1f83c01a",   // 申请好的Web端开发者Key，首次调用 load 时必填 f87e0c9c4f3e1e78f963075d142979f0
+      key: this.config.key||"4a9cf55d794f86c8330ee0b69fd31796",   // 申请好的Web端开发者Key，首次调用 load 时必填 f87e0c9c4f3e1e78f963075d142979f0
       version: "2.0",   // 指定要加载的 JSAPI 的版本，缺省时默认为 1.4.15
       plugins: ['AMap.MoveAnimation'] //插件列表
     });
@@ -264,8 +264,13 @@ class GaodeMapCard extends HTMLElement {
     }else{
       AMap.convertFrom(gps, type, function (status, result) {
         // console.info(result.locations[0])
+        // if (result.info === 'ok') {
+        //  that._showMarker(result.locations[0],entity,color,type);
+        // }
         if (result.info === 'ok') {
-          that._showMarker(result.locations[0],entity,color,type);
+          that._showMarker(result.locations[0], entity, color, type);
+        } else {
+          console.info("%c 地图加载异常:%o", "color: white; font-weight: bold; background: dimgray", result);
         }
       });
     }
