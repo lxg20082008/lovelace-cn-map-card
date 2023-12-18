@@ -1,4 +1,4 @@
-console.info("%c  GAODE MAP CARD  \n%c Version 1.2.7 ",
+console.info("%c  GAODE MAP CARD fixed  \n%c Version 1.2.7 ",
 "color: orange; font-weight: bold; background: black", 
 "color: white; font-weight: bold; background: dimgray");
 window._AMapSecurityConfig = { securityJsCode:'xxxx' }; //源代码新增。xxxx替换为您申请的安全密钥。
